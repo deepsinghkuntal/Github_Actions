@@ -41,15 +41,7 @@ jobs:
     steps:
     - name: check-out code 
       uses: actions/checkout@v4
-    - name: Install Trivy
-      shell: bash
-      run: |
-        sudo apt-get update
-        sudo apt-get install wget apt-transport-https gnupg lsb-release -y
-        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
-        
-        sudo apt-get update
-        sudo apt-get install trivy -y
+
 
 
     - name: Trivy Scan
